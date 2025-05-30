@@ -1,0 +1,8 @@
+{
+  "name": "Dacia",
+  "creator": "Loshi",
+  "description": "the new Dacia Duster",
+  "version": "1.0.0",
+  "entry": "index.js",
+  "requires": ["Amaterasu"]
+}
