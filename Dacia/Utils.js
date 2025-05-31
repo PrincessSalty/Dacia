@@ -1,1 +1,1 @@
-export const prefix = "&8[&9Dacia&8]";
+export const Dacia = "&8[&9Dacia&8]";
