@@ -1,9 +1,11 @@
 import { Dacia } from "../../Utils";
 import { data } from "../../Data";
+import Settings from "../../Settings";
 
 let armorNames = data.armorNames
 
 register("guiKey", (x, keyCode, gui, event) => {
+	if (!Settings.swap) return
 	const container = Player.getContainer().getName().removeFormatting();
 	const containerInt = Player.getContainer();
  	if (container == "Wardrobe (1/2)") {
@@ -43,13 +45,12 @@ register("guiKey", (x, keyCode, gui, event) => {
 })
 
 register("command", (...args) => {
-    const subCommand = args[0]?.toLowerCase();
-    const set = args[1]?.toLowerCase();
-    const number = parseInt(args[2]);
-    const armor = args.slice(3).join(" ");
+    const set = args[0]?.toLowerCase();
+    const number = parseInt(args[1]);
+    const armor = args.slice(2).join(" ");
 
-    if (subCommand !== "armor" || set !== "set") {
-        ChatLib.chat(`${Dacia} &cUsage: /dc armor set <1-9> <name>`);
+    if (set !== "set") {
+        ChatLib.chat(`${Dacia} &cUsage: /dcarmor set <1-9> <name>`);
         return;
     }
 
@@ -70,4 +71,4 @@ register("command", (...args) => {
     data.armorNames = armorNames;
     data.save();
 
-}).setName("dc");
+}).setName("dcarmor");
