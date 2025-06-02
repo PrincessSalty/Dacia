@@ -12,7 +12,7 @@ register("command", (...args) => {
     if (reason == "") {
         ChatLib.chat(`${Dacia} &fkicked &9${playerToKick}`);
     } else {
-        ChatLib.command(`${Dacia} &fkicked &9${playerToKick} &freason: ${reason}`);
+        ChatLib.chat(`${Dacia} &fkicked &9${playerToKick} &freason: ${reason}`);
         // watchout Andrew
     }
 }).setName("dckick")

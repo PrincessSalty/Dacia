@@ -8,7 +8,7 @@ register("tick", () => {
 })
 
 const tickOverlay = register("renderOverlay", () => {
-    Renderer.drawStringWithShadow((ticks > 13 ? "§a" : ticks > 6 ? "§6" : "§c") + (ticks / 20).toFixed(2), 10, 10);
+    Renderer.drawStringWithShadow(`&6${ticks}`, 10, 10);
 }).unregister();
 
 register("chat", (message) => {
@@ -21,6 +21,7 @@ register("chat", (message) => {
         crushOverlay.register();
     }
     if (ticks <= 0) {
+        ticks = 20;
         crushOverlay.unregister();
     }
 }).setCriteria("${message}")
